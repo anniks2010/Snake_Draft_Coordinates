@@ -1,0 +1,6 @@
+C:\Users\opilane\projects\SnakeDraft\SnakeDraft\bin\Debug\SnakeDraft.exe.config
+C:\Users\opilane\projects\SnakeDraft\SnakeDraft\bin\Debug\SnakeDraft.exe
+C:\Users\opilane\projects\SnakeDraft\SnakeDraft\bin\Debug\SnakeDraft.pdb
+C:\Users\opilane\projects\SnakeDraft\SnakeDraft\obj\Debug\SnakeDraft.csprojAssemblyReference.cache
+C:\Users\opilane\projects\SnakeDraft\SnakeDraft\obj\Debug\SnakeDraft.exe
+C:\Users\opilane\projects\SnakeDraft\SnakeDraft\obj\Debug\SnakeDraft.pdb

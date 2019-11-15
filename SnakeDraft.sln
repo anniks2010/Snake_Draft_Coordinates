@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeDraft", "SnakeDraft\SnakeDraft.csproj", "{FC3B963A-5B93-42CF-B246-2C3401C66C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Point", "Point\Point.csproj", "{ABA17822-F060-4102-8686-BDADE237BA82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC3B963A-5B93-42CF-B246-2C3401C66C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC3B963A-5B93-42CF-B246-2C3401C66C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC3B963A-5B93-42CF-B246-2C3401C66C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC3B963A-5B93-42CF-B246-2C3401C66C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA17822-F060-4102-8686-BDADE237BA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA17822-F060-4102-8686-BDADE237BA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA17822-F060-4102-8686-BDADE237BA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA17822-F060-4102-8686-BDADE237BA82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17D6B790-40D8-48FC-81CB-1D7BA788D5C4}
+	EndGlobalSection
+EndGlobal
