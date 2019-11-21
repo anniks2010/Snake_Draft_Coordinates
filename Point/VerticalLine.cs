@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 
 namespace Point
 {
-    class VerticalLine
+    class VerticalLine : Figure
     {
-        public List<Point> pointList = new List<Point>();
+        ///public List<Point> pointList = new List<Point>();
 
         public VerticalLine(int yUp, int yDown, int x, char symbol)
         {
+
             for(int i = yUp; i<= yDown; i++)
             {
                 Point newPoint = new Point(x, i, symbol);
                 pointList.Add(newPoint);
             }
         }
-        public void DrawVerticalLine()
+        /*public void DrawVerticalLine()
         {
             foreach(Point point in pointList)
             {
                 point.Draw();
             }
-        }
+        }*/
     }
 }
