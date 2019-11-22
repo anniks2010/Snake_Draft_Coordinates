@@ -49,7 +49,7 @@ namespace Point
 
             /// Kolmas võimalus, luua eraldi klass horisontaaljoone jaoks:
 
-            Console.BackgroundColor = ConsoleColor.Yellow; ////Koos Clear () tuleb kasutada ning saab konsooli tagatausta värvida.
+            Console.BackgroundColor = ConsoleColor.White; ////Koos Clear () tuleb kasutada ning saab konsooli tagatausta värvida.
             Console.Clear(); 
 
             Console.SetWindowSize(26, 26); ////sellega saab piirata konsooli akna suurust
@@ -57,7 +57,11 @@ namespace Point
 
             Console.ForegroundColor = ConsoleColor.Black;
 
-            HorizontalLine topLine = new HorizontalLine(0, 24, 0, '*');
+            Walls walls = new Walls(26, 26);
+            walls.DrawWalls();
+
+            ////Selle kohta tegime uue klassi Walls
+            /*HorizontalLine topLine = new HorizontalLine(0, 24, 0, '*');
             //topLine.DrawHorizontalLine(); nüüd kasutame Figure klassi meetodit
             topLine.DrawFigure();
 
@@ -71,13 +75,13 @@ namespace Point
 
             VerticalLine rightVerticalLIne = new VerticalLine(0, 24, 24, '*');
             ///rightVerticalLIne.DrawVerticalLine(); nüüd kasutame Figure klassi meetodit
-            rightVerticalLIne.DrawFigure();
+            rightVerticalLIne.DrawFigure();*/
 
             Point tail = new Point(6, 5, '*');
             Snake snake = new Snake(tail, 4, Direction.RIGHT);
             snake.DrawFigure();
 
-            FoodCatering foodCatering = new FoodCatering(10, 15, '$');
+            FoodCatering foodCatering = new FoodCatering(26, 26, '$');
             Point food = foodCatering.CaterFood();
             food.Draw();
             
@@ -113,19 +117,55 @@ namespace Point
 
             while (true)
             {
+                if (walls.IsHitByFigure(snake))
+                {
+                    
+                    break;
+                }
+                if (snake.Eat(food))
+                {
+                    food = foodCatering.CaterFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.MoveSnake();
+                }
+                Thread.Sleep(200);
+
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.ReadUserKey(key.Key);
                 }
-                snake.MoveSnake();
-                Thread.Sleep(300);
+                
 
             }
+
+          
+            WriteGameOver();
 
 
 
             Console.ReadLine();
         }
+        public static void WriteGameOver()
+        {
+            Console.Clear();
+            int xOffset = 8;
+            int yOffset = 8;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.SetCursorPosition(xOffset, yOffset++); ////kust ta peab alustama, ++ teeb ühe rea vahele ehk y kordinaat .
+            ShowMessage("==========", xOffset, yOffset++);
+            ShowMessage("GAME OVER!",xOffset,yOffset++);
+            ShowMessage("==========", xOffset, yOffset++);
+        }
+        public static void ShowMessage(string text, int xOffset, int yOffset)
+        {
+            Console.SetCursorPosition(xOffset, yOffset);
+            Console.WriteLine(text);
+        }
+
+        ///Viis uuendust lisada. takistused võiks lisada wall klassi, ning tekitada randomiga takistused. Skoori võiks näidata. Snake ära värvida.võib toitu värvida (toidu klassi tekib uus omadus värv)
     }
 }

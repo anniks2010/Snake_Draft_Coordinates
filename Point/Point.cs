@@ -50,5 +50,9 @@ namespace Point
             }
 
         }
+        public bool IsHit(Point point)
+        {
+            return point.x == x && point.y == y; ////kui point punkti x ja y võrduvad selle meetodi x ja y-ga.
+        }
     }
 }

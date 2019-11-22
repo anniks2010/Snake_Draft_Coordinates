@@ -17,17 +17,21 @@ namespace Point
     class Snake : Figure
     {
         public Direction Direction;
+        
 
         public Snake(Point tail, int lenght, Direction _direction) ///alakriips tähendab, et ma kasutan seda objekti loomiseks
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Direction = _direction;
+
             for(int i =0; i< lenght; i++)
             {
                 Point newPoint = new Point(tail);
                 newPoint.MovePoint(i, Direction);
                 pointList.Add(newPoint);
+                
             }
-
+           
         }
         public void MoveSnake()
         {
@@ -65,6 +69,19 @@ namespace Point
                 Direction = Direction.DOWN;
             }
         }
-        
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food)) ////kui see on true, siis lisab selle pointlisti sisse sele punkti.
+            {
+                food.symbol = head.symbol; ///kui seda mitte panna, siis ta lisaks toidu sümboli ussi pikkusesse.
+                pointList.Add(food);
+                return true; ////kui on ära söönud, siis on true
+            }
+            else
+            {
+                return false; ///kui ei ole ära söönud, siis on false.
+            }
+        }
     }
 }

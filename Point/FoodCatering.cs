@@ -19,9 +19,11 @@ namespace Point
             MapWidth = _mapWidth;
             MapHeight = _mapHeight;
             Symbol = _symbol;
+            
         }
         public Point CaterFood()
         {
+            
             int x = rnd.Next(2, MapWidth - 2);
             int y = rnd.Next(2, MapHeight - 2);
             return new Point(x, y, Symbol);
