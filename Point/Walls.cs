@@ -24,11 +24,13 @@ namespace Point
             VerticalLine leftLine = new VerticalLine(0, mapHeight - 1, 0, '#');
             VerticalLine rightLine = new VerticalLine(0, mapHeight - 1, mapWidth - 2, '#');
             HorizontalLine takistus = new HorizontalLine(begin, x, y, '@');
+            VerticalLine takistusTwo = new VerticalLine(begin, x, y, '@');
             wallList.Add(topLine);
             wallList.Add(buttonLine);
             wallList.Add(leftLine);
             wallList.Add(rightLine);
             wallList.Add(takistus);
+            wallList.Add(takistusTwo);
         }
         public void DrawWalls()
         {

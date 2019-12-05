@@ -52,8 +52,8 @@ namespace Point
             Console.BackgroundColor = ConsoleColor.White; ////Koos Clear () tuleb kasutada ning saab konsooli tagatausta värvida.
             Console.Clear(); 
 
-            Console.SetWindowSize(26, 26); ////sellega saab piirata konsooli akna suurust
-            Console.SetBufferSize(26, 26); ///sellega scrolli maha, ehk piirata konsooli akna tegelikku mahutavust
+            Console.SetWindowSize(40, 26); ////sellega saab piirata konsooli akna suurust
+            Console.SetBufferSize(40, 26); ///sellega scrolli maha, ehk piirata konsooli akna tegelikku mahutavust
 
             Console.ForegroundColor = ConsoleColor.Black;
 
@@ -84,7 +84,9 @@ namespace Point
             FoodCatering foodCatering = new FoodCatering(26, 26, '$');
             Point food = foodCatering.CaterFood();
             food.Draw();
-            
+
+
+
             /*while (true)
             {
                 if (Console.KeyAvailable)
@@ -115,7 +117,9 @@ namespace Point
 
             }See läks Snake klassi sisse meetodina readUserKey*/
 
+            PrintScore();
             while (true)
+                
             {
                 if (walls.IsHitByFigure(snake))
                 {
@@ -126,10 +130,14 @@ namespace Point
                 {
                     food = foodCatering.CaterFood();
                     food.Draw();
+                    
+                    
+
                 }
                 else
                 {
                     snake.MoveSnake();
+                   
                 }
                 Thread.Sleep(200);
 
@@ -142,8 +150,9 @@ namespace Point
 
             }
 
-          
+            
             WriteGameOver();
+          
 
 
 
@@ -159,13 +168,29 @@ namespace Point
             ShowMessage("==========", xOffset, yOffset++);
             ShowMessage("GAME OVER!",xOffset,yOffset++);
             ShowMessage("==========", xOffset, yOffset++);
+           
+            
+            
         }
         public static void ShowMessage(string text, int xOffset, int yOffset)
         {
             Console.SetCursorPosition(xOffset, yOffset);
             Console.WriteLine(text);
         }
+        public static void PrintScore()
+        {
+            int xOffset = 26;
+            int yOffset = 0;
+            int score = 0;
+
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.SetCursorPosition(xOffset, yOffset++);
+            ShowMessage($"Score: {score}", xOffset, yOffset++);
+
+            
+        }
+
 
         ///Viis uuendust lisada. takistused võiks lisada wall klassi, ning tekitada randomiga takistused. Skoori võiks näidata. Snake ära värvida.võib toitu värvida (toidu klassi tekib uus omadus värv)
-    }
+    }   ///NT Stopwatch Class,
 }

@@ -21,7 +21,7 @@ namespace Point
 
         public Snake(Point tail, int lenght, Direction _direction) ///alakriips tähendab, et ma kasutan seda objekti loomiseks
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            ////Console.ForegroundColor = ConsoleColor.Green;
             Direction = _direction;
 
             for(int i =0; i< lenght; i++)
