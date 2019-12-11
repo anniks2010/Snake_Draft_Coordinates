@@ -12,20 +12,23 @@ namespace Point
 
         int score = 0;
 
-        public int GetScore(string text, int xOffset, int yOffset)
+        public int GetScore(int score,int xOffset,int yOffset)
         {
-            xOffset = 24;
-            yOffset = 40;
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.SetCursorPosition(xOffset, yOffset++);
-            ///ShowMessage("Score:", xOffset, yOffset++);
-
             return score;
         }
         public void AddPoint()
         {
+
+            
+           
+            int xOffset = 26;
+            int yOffset = 0;
+
             score++;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.SetCursorPosition(xOffset, yOffset++);
+            GetScore(score, xOffset, yOffset++);
+
         }
         public void ResetScore()
         {

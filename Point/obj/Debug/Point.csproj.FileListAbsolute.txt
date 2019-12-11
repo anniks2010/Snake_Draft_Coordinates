@@ -4,3 +4,10 @@ C:\Users\opilane\projects\SnakeDraft\Point\bin\Debug\Point.pdb
 C:\Users\opilane\projects\SnakeDraft\Point\obj\Debug\Point.exe
 C:\Users\opilane\projects\SnakeDraft\Point\obj\Debug\Point.pdb
 C:\Users\opilane\projects\SnakeDraft\Point\obj\Debug\Point.csprojAssemblyReference.cache
+C:\Users\Kodu\Desktop\Snake_Draft_Coordinates\Point\bin\Debug\Point.exe.config
+C:\Users\Kodu\Desktop\Snake_Draft_Coordinates\Point\bin\Debug\Point.exe
+C:\Users\Kodu\Desktop\Snake_Draft_Coordinates\Point\bin\Debug\Point.pdb
+C:\Users\Kodu\Desktop\Snake_Draft_Coordinates\Point\obj\Debug\Point.csprojAssemblyReference.cache
+C:\Users\Kodu\Desktop\Snake_Draft_Coordinates\Point\obj\Debug\Point.csproj.CoreCompileInputs.cache
+C:\Users\Kodu\Desktop\Snake_Draft_Coordinates\Point\obj\Debug\Point.exe
+C:\Users\Kodu\Desktop\Snake_Draft_Coordinates\Point\obj\Debug\Point.pdb

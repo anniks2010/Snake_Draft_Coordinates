@@ -60,6 +60,7 @@ namespace Point
             Walls walls = new Walls(26, 26);
             walls.DrawWalls();
 
+            
             ////Selle kohta tegime uue klassi Walls
             /*HorizontalLine topLine = new HorizontalLine(0, 24, 0, '*');
             //topLine.DrawHorizontalLine(); nüüd kasutame Figure klassi meetodit
@@ -84,6 +85,14 @@ namespace Point
             FoodCatering foodCatering = new FoodCatering(26, 26, '$');
             Point food = foodCatering.CaterFood();
             food.Draw();
+
+            FoodCatering foodCatering2 = new FoodCatering(26, 26, '%');
+            Point food2 = foodCatering2.CaterFood2();
+            food2.Draw();
+
+            Score scoreCalculation = new Score();
+            
+
 
 
 
@@ -116,8 +125,13 @@ namespace Point
                 Thread.Sleep(300); ////See muudab ussi kiirust
 
             }See läks Snake klassi sisse meetodina readUserKey*/
+           
 
+
+            
+            int score = 0;
             PrintScore();
+            scoreCalculation.GetScore(score, 33, 1);
             while (true)
                 
             {
@@ -126,14 +140,32 @@ namespace Point
                     
                     break;
                 }
-                if (snake.Eat(food))
+                if (snake.Eat(food) || snake.Eat(food2))
                 {
-                    food = foodCatering.CaterFood();
-                    food.Draw();
-                    
-                    
+                    Random rnd3 = new Random();
+                    int choise = rnd3.Next(1, 3);
+
+                    if (choise == 1)
+                    {
+                        food = foodCatering.CaterFood();
+                        food.Draw();
+                        Console.Beep();
+                        score++;
+                        scoreCalculation.AddPoint();
+                       
+                    }
+                    else if (choise == 2)
+                    {
+                        food2 = foodCatering2.CaterFood2();
+                        food2.Draw();
+                        score = score+2;
+                        scoreCalculation.AddPoint();
+                        
+                    }
 
                 }
+              
+      
                 else
                 {
                     snake.MoveSnake();
@@ -150,15 +182,15 @@ namespace Point
 
             }
 
+         
+            WriteGameOver(score);
             
-            WriteGameOver();
-          
 
 
 
             Console.ReadLine();
         }
-        public static void WriteGameOver()
+        public static void WriteGameOver(int score)
         {
             Console.Clear();
             int xOffset = 8;
@@ -168,9 +200,11 @@ namespace Point
             ShowMessage("==========", xOffset, yOffset++);
             ShowMessage("GAME OVER!",xOffset,yOffset++);
             ShowMessage("==========", xOffset, yOffset++);
+            ShowMessage($"Your total score was {score}", xOffset, yOffset++);
            
-            
-            
+
+
+
         }
         public static void ShowMessage(string text, int xOffset, int yOffset)
         {
@@ -181,14 +215,19 @@ namespace Point
         {
             int xOffset = 26;
             int yOffset = 0;
-            int score = 0;
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.SetCursorPosition(xOffset, yOffset++);
-            ShowMessage($"Score: {score}", xOffset, yOffset++);
+            
+       
 
             
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.SetCursorPosition(xOffset, yOffset++);
+            ShowMessage($"Score: ", xOffset, yOffset++);
+            
+            
+ 
         }
+      
+       
 
 
         ///Viis uuendust lisada. takistused võiks lisada wall klassi, ning tekitada randomiga takistused. Skoori võiks näidata. Snake ära värvida.võib toitu värvida (toidu klassi tekib uus omadus värv)
